@@ -16,27 +16,47 @@ const files=fs.readdirSync(path.join(gpath),"utf-8")
   res.render('files',{files: files });
 });
 
-router.get('/readmore', function(req, res, next) {
-  res.render('readmore',{files:''});
-});
+// router.get('/readmore', function(req, res, next) {
+//   res.render('readmore',{files:''});
+// });
 
 
 
 router.get('/readmore/:filename', function(req, res, next) {
   const filedata=fs.readFileSync(path.join(gpath,req.params.filename),'utf8')
-  res.redirect('readmore',{filename:req.params.filename,filedata: req.params.filedata});
-});
+  res.render('readmore',{filename:req.params.filename,filedata: filedata});
+ });
+// router.get('/readmore/:filename', function(req, res, next) {
+//   try {
+//     const filePath = path.join(gpath, req.params.filename);
+//     const filedata = fs.readFileSync(filePath, 'utf8');
+//     res.render('readmore', { filename: req.params.filename, filedata: filedata });
+//   } catch (err) {
+//     next(err);  // Pass the error to the error handling middleware
+//   }
+// });
 
 
 //description or title dono sth  me use nhi ho rhe hai
 
-router.post('/createfile', function(req, res, next) {
-  const {filename}=req.body;
-  
-  fs.writeFileSync(path.join(gpath,filename,detail),'')
-  res.redirect('/files');
-});
+// router.post('/createfile', function(req, res, next) {
+//   const {filename,detail}=req.body;
 
+//   fs.writeFileSync(path.join(gpath,filename,detail),'')
+//   res.redirect('/files');
+// });
+
+
+router.post('/createfile', function(req, res, next) {
+  const { filename, detail } = req.body;
+
+  try {
+    fs.writeFileSync(path.join(gpath, filename), detail, 'utf8');
+    res.redirect('/files');
+  } catch (err) {
+    res.send(err);  // Pass the error to the error handling middleware
+  }
+});
 
 
 module.exports = router;
