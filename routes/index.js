@@ -58,5 +58,20 @@ router.post('/createfile', function(req, res, next) {
   }
 });
 
+router.get('/edit/:filename', function(req, res, next) {
+  res.render('edit',{filename:req.params.filename});
+});
+
+
+router.post('/edit', function(req, res, next) {
+ fs.renameSync(path.join(gpath,req.body.previous),req.body.new,"utf8")
+ res.redirect('/files');
+});
+
+
+
+
+
+
 
 module.exports = router;

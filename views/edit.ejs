@@ -1,0 +1,26 @@
+!<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notepad</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-800">
+
+ 
+  <main class=" main w-full min-h-screen bg-zinc-800 flex flex-col justify-center items-center  text-white">
+    <h1 class="bg-zinc-800 text-9xl text-white justify-center flex mb-20  " >NOTEPAD</h1>
+
+    <form action="/edit" method="post">
+        <input class="block mt-2 px-5 mt-5 py-2 zinc-700 bg-zinc-700 w-full  " type="text" placeholder="Previous filename" name="previous" value="<%= filename %>">
+        <input class="block mt-2 px-5 mt-5 py-2 zinc-700 bg-zinc-700 w-full  " type="text" placeholder="New filename" name="new">
+        <button class="px-5 py-1 ml-8  mt-5 bg-yellow-600  w-40   " type="submit">Update name</button>
+      </form>
+      
+    <a class="text-blue-300 text-xl" href="/files">Files!</a>
+  </main>
+
+
+</body>
+</html>

@@ -6,18 +6,21 @@
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-zinc-800">
+<body class="bg-zinc-800 ">
 
     <h1 class="bg-zinc-800 text-9xl text-white justify-center flex  " >NOTEPAD</h1>
-    <main class=" main w-full min-h-screen bg-zinc-800 flex flex-col text-white">
+    <main class=" main w-full h-50 bg-zinc-800 flex flex-row text-white">
      
       <% if (files.length > 0) { %>
 
         <% files.forEach(function(val){ %>
 
-            <div class="task bg-zinc-700 px-5 py-4 w-40 mt-8 ml-4 ">
+            <div class="task bg-zinc-700 px-5 py-4 w-40 mt-40 ml-7 ">
                 <h1><%= val %></h1>
-                <a class="text-blue-300" href="/readmore/<%= val %>">Read more!</a>
+                <div class="flex justify-between items-center">
+                  <a class="text-blue-300" href="/readmore/<%= val %>">Read more!</a>
+                <a class="text-zinc-400" href="/edit/<%= val %>">edit</a>
+                </div>
                 </div>
 
         <% }) %>
