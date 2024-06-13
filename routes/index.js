@@ -32,7 +32,7 @@ router.get('/readmore/:filename', function(req, res, next) {
 
 router.post('/createfile', function(req, res, next) {
   const {filename}=req.body;
-  const {detail}=req.body;
+  
   fs.writeFileSync(path.join(gpath,filename,detail),'')
   res.redirect('/files');
 });
