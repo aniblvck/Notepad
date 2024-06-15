@@ -63,8 +63,10 @@ router.get('/edit/:filename', function(req, res, next) {
 });
 
 
+//rename file
+
 router.post('/edit', function(req, res, next) {
- fs.renameSync(path.join(gpath,req.body.previous),req.body.new,"utf8")
+ fs.renameSync(path.join(gpath,req.body.previous),path.join(gpath,req.body.new))
  res.redirect('/files');
 });
 

@@ -9,13 +9,13 @@
 <body class="bg-zinc-800">
 
   <h1 class="bg-zinc-800 text-9xl text-white justify-center flex  " >NOTEPAD</h1>
-  <main class=" main w-full  bg-zinc-800 flex flex-col text-white">
+  <main class=" main w-full  bg-zinc-800  flex flex-col min-h-screen  items-cemter text-white">
    
-<div class="form w-full mt-10 justify-center flex flex-col items-cemter ">
-  <form action="/createfile" method="post">
-    <input class="block mt-2 px-5 mt-5 py-2 zinc-700 bg-zinc-700 w-full " type="text" placeholder="Write your filename" name="filename">
-    <textarea class="block mt-8 px-5 py-2 zinc-700 bg-zinc-700 w-full resize-none " placeholder="description of your file" name="detail" id="" cols="50" rows="5"></textarea>
-   <div class="w-full justify-center flex"> <button class="px-5 py-1  mt-5 bg-yellow-600  w-40   " type="submit">Create</button></div>
+<div class="form w-full  mt-28 justify-center flex flex-col  items-cemter ">
+  <form action="/createfile" method="post" >
+    <div class="px-16 "><input class="mt-2 px-5 text-center h-14 rounded py-2 zinc-700 bg-zinc-700 min-w-full " type="text" placeholder="Write your filename" name="filename"></div>
+    <div class="px-16"><textarea class="block mt-8 px-5 py-2 rounded zinc-700 bg-zinc-700 w-full text-center  resize-none " placeholder="description of your file" name="detail" id="" cols="50" rows="5"></textarea></div>
+   <div class="w-full justify-center flex"> <button class="px-5 py-1  mt-5 bg-yellow-600  w-40 cursor-pointer  " type="submit">Create</button></div>
   </form>
   
 </div>
